@@ -13,28 +13,19 @@ This repository provides both a scripted agent and a DQN agent for the Pysc2 `Bu
 The major idea is to reduce the dimensionality of the action space. In this work we abstract all actions into 6 scenarios:
 
 - **No operation**.
-
 - **Make an SCV**, which is 
-
-- - Select the command center, and
+  - Select the command center, and
   - Train an SCV.
-
 - **Build a supply depot**, which is 
-
-- - Select an SCV, 
+  - Select an SCV, 
   - Build a supply depot at a *predefined* location, and
   - Queue the SCV back to mining, so that we do not need to know when the building finishes.
-
 - **Build a barracks**, which follows basically the same procedure as above.
-
 - **Make marines**, which is 
-
-- - Select *all* barracks, and
+  - Select *all* barracks, and
   - Building marines.
-
 - **Kill marines**, which is 
-
-- - Select all marines (select the army), and
+  - Select all marines (select the army), and
   - Attack a specific point so that eventually some of them will be killed.
 
 The last action is beneficial because we may save the food supply without hurting the scores.
